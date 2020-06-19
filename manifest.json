@@ -1,0 +1,19 @@
+{
+  "manifest_version": 2,
+  "name": "ScrollTabs",
+  "version": "0.1.0",
+  "description": "Adiciona un borde rojo a todas las paginas que calcen con mozilla.org.",
+  "icons": {
+    "48": "icons/border-48.png"
+  },
+  "permissions": ["<all_urls>", "tabs"],
+  "background": {
+    "scripts": ["src/services/tabs.service.js", "src/app.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "js": ["src/inserted.js"]
+    }
+  ]
+}
