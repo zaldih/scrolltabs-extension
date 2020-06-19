@@ -4,25 +4,25 @@
   "version": "0.1.0",
   "description": "Adiciona un borde rojo a todas las paginas que calcen con mozilla.org.",
   "icons": {
-    "48": "src/icons/logo.png"
+    "48": "icons/logo.png"
   },
   "permissions": ["<all_urls>", "tabs"],
   "background": {
     "scripts": [
-      "src/services/tabs.service.js",
-      "src/services/extension.service.js",
-      "src/app.js"
+      "services/tabs.service.js",
+      "services/extension.service.js",
+      "app.js"
     ]
   },
   "content_scripts": [
     {
       "matches": ["*://*/*"],
-      "js": ["src/inserted.js"]
+      "js": ["inserted.js"]
     }
   ],
   "options_ui": {
-    "page": "src/views/instructions.html",
+    "page": "views/instructions.html",
     "open_in_tab": true
   },
-  "web_accessible_resources": ["src/views/instructions.html"]
+  "web_accessible_resources": ["views/instructions.html"]
 }
