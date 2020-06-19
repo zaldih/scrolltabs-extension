@@ -6,7 +6,7 @@ const scrollTab = (() => {
     down: tabsService.getPreviusTab,
   };
 
-  setMessagesListener();
+  setListeners();
 
   async function scrollTab(direction) {
     if (!directions[direction]) {
@@ -21,7 +21,7 @@ const scrollTab = (() => {
     const executionResult = tabsService.updateTab(targetTab);
   }
 
-  function setMessagesListener() {
+  function setListeners() {
     browser.runtime.onMessage.addListener((message) => {
       if (message.scrollAction) {
         const { scrollAction } = message;
@@ -31,6 +31,11 @@ const scrollTab = (() => {
         const { keyTriggerChange } = message;
         state.keyTrigered = keyTriggerChange;
       } */
+    });
+
+    browser.runtime.onInstalled.addListener(({ reason, temporary }) => {
+      if (temporary) return; // skip during development
+      extensionService.onInstalled();
     });
   }
 

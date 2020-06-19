@@ -8,12 +8,21 @@
   },
   "permissions": ["<all_urls>", "tabs"],
   "background": {
-    "scripts": ["src/services/tabs.service.js", "src/app.js"]
+    "scripts": [
+      "src/services/tabs.service.js",
+      "src/services/extension.service.js",
+      "src/app.js"
+    ]
   },
   "content_scripts": [
     {
       "matches": ["*://*/*"],
       "js": ["src/inserted.js"]
     }
-  ]
+  ],
+  "options_ui": {
+    "page": "src/views/instructions.html",
+    "open_in_tab": true
+  },
+  "web_accessible_resources": ["src/views/instructions.html"]
 }
