@@ -8,7 +8,6 @@ const scrollTabInserted = (() => {
   const state = {
     keyTrigered: false,
   };
-  console.log('inserted loaded');
 
   setListeners();
   function scroll(event) {
