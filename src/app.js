@@ -27,10 +27,6 @@ const scrollTab = (() => {
         const { scrollAction } = message;
         scrollTab(scrollAction);
       }
-      /*    if (message.keyTriggerChange) {
-        const { keyTriggerChange } = message;
-        state.keyTrigered = keyTriggerChange;
-      } */
     });
 
     browser.runtime.onInstalled.addListener(({ reason, temporary }) => {
