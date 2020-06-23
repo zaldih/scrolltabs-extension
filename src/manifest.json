@@ -23,8 +23,8 @@
     }
   ],
   "options_ui": {
-    "page": "views/instructions.html",
+    "page": "instructions.html",
     "open_in_tab": true
   },
-  "web_accessible_resources": ["views/instructions.html"]
+  "web_accessible_resources": ["instructions.html"]
 }
