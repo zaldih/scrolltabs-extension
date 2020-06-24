@@ -69,7 +69,7 @@ We will continue to do things anyway, but donations are one of the many ways to 
 
 # :scroll: License
 
-MIT © [Estefanía García Gallardo](https://github.com/nyagarcia) [Juan Torres Gómez](https://github.com/zaldih)
+MIT © [Juan Torres Gómez](https://github.com/zaldih) [Estefanía García Gallardo](https://github.com/nyagarcia)
 
 :cat::baby_chick:
 
