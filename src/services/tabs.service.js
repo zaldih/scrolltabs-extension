@@ -1,31 +1,45 @@
 'use strict';
 
 const tabsService = (() => {
-  function getNextTab(tabs) {
-    const actualTab = getActualTabIndex(tabs);
-    return actualTab >= tabs.length - 1 ? actualTab : actualTab + 1;
-  }
+  const tabDirections = {
+    up: _getNextTabIndex,
+    down: _getPreviousTabIndex
+  };
 
-  function getPreviusTab(tabs) {
-    const actualTab = getActualTabIndex(tabs);
-    return actualTab <= 0 ? actualTab : actualTab - 1;
-  }
-
-  function getTabs() {
-    const options = { currentWindow: true, hidden: false };
-    return browser.tabs.query(options);
+  async function getTargetTabId(tabDirection) {
+    const tabs = await _getTabs();
+    const targetTabIndex = tabDirections[tabDirection](tabs);
+    return tabs[targetTabIndex].id;
   }
 
   function updateTab(tabId) {
     const options = {
-      active: true,
+      active: true
     };
     return browser.tabs.update(tabId, options);
   }
 
-  function getActualTabIndex(tabs) {
-    return tabs.findIndex((tab) => tab.active);
+  function _getNextTabIndex(tabs) {
+    const actualTab = _getActualTabIndex(tabs);
+    return actualTab >= tabs.length - 1 ? actualTab : actualTab + 1;
   }
 
-  return { getNextTab, getPreviusTab, getTabs, updateTab };
+  function _getPreviousTabIndex(tabs) {
+    const actualTab = _getActualTabIndex(tabs);
+    return actualTab <= 0 ? actualTab : actualTab - 1;
+  }
+
+  function _getTabs() {
+    const options = { currentWindow: true, hidden: false };
+    return browser.tabs.query(options);
+  }
+
+  function _getActualTabIndex(tabs) {
+    return tabs.findIndex(tab => tab.active);
+  }
+
+  return {
+    getTargetTabId,
+    updateTab
+  };
 })();
