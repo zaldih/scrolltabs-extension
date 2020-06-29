@@ -11,7 +11,7 @@
 
 # How to get it
 
-Go to mozilla's addon repertoire, look for scrolltabs and install it (Psst... Here's a [direct magic portal](https://example.org) :eyes:) (Coming soon)
+Go to mozilla's addon repertoire, look for scrolltabs and install it (Psst... Here's a [direct magic portal](https://addons.mozilla.org/es/firefox/addon/scrolltabs/?src=search) :eyes:)
 
 # Usage
 
