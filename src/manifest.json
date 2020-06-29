@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "ScrollTabs",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Increases your agility when browsing. ScrollTabs allows you to scroll between your tabs from almost anywhere on the page with 'shift' and mouse wheel.",
   "author": "zaldih",
   "homepage_url": "https://github.com/zaldih/scrolltabs-extension",

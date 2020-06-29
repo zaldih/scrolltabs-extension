@@ -4,7 +4,7 @@ const scrollTab = (() => {
   setListeners();
 
   function setListeners() {
-    browser.runtime.onMessage.addListener(message => {
+    browser.runtime.onMessage.addListener((message) => {
       if (message.scrollAction) {
         const { scrollAction } = message;
         try {
