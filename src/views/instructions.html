@@ -12,8 +12,19 @@
       flex-direction: column;
       align-items: center;
       font-family: 'Noto Sans HK', sans-serif;
+    }
 
+    footer {
+      position: absolute;
+      bottom: 20px;
+      text-align: center;
+    }
 
+    a {
+      color: teal;
+      font-family: helvetica;
+      text-decoration: none;
+      text-transform: uppercase;
     }
 
     .logo {
@@ -36,9 +47,29 @@
     <p class="basic-instructions">- Hold down the <b>Shift</b> key and scroll the page to change tabs. -</p>
     <hr>
     <h3>Limitations</h3>
-    <p>On some pages the extension will not work. Some are addons.mozilla.org or about:// .<br>
-      Also, the tab must be loaded</p>
+    <div>
+      <!-- Yass, <p> instead <ul><li> :D -->
+      <p>
+        On some pages the extension will not work. Some are addons.mozilla.org, about:// or this one.<br>
+        Also, the tab must be loaded
+      </p>
+      <p>
+        The browser should be in the foreground
+      </p>
+      <p>
+        The cursor must be on the page, and the page must have finished loading
+      </p>
+    </div>
   </div>
+
+  <footer>
+    <p>
+      Made with <span style="color: red;">♥</span> by <a href="https://twitter.com/juaniman99"
+        target="_black">Zaldih</a>
+      and <a href="https://twitter.com/nyablk" target="_black">Nya</a>
+    </p>
+    <p><a class="view-on-github-link" href="https://github.com/zaldih/scrolltabs-extension/">View on GitHub</a></p>
+  </footer>
 </body>
 
 </html>
